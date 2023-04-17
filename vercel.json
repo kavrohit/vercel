@@ -1,9 +1,4 @@
 {
-  "functions":{
-    "api/hello.js":{
-      "runtime":"nodejs18.x",
-      "memory":128,
-      "timeout":"10"
-    }
-  }
+  "version":2,
+  "builds":[{"src":"api/**/*.js","use":"@vercel/node"}]
 }
