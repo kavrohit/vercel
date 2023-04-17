@@ -1,0 +1,9 @@
+{
+  "functions":{
+    "api/hello.js":{
+      "runtime":"nodejs14.x",
+      "memory":128,
+      "timeout":"10"
+    }
+  }
+}
