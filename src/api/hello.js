@@ -1,3 +1,4 @@
-export default (req, res) =>{
-  res.status(200).json({message:'Hello from vercels Serverless function'})
+module.exports = async (req,res) =>{
+  const name = req.query.name || 'World'
+  res.status(200).send(`Hello,${name}`)
 }

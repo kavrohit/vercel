@@ -1,17 +1,25 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 
 const App = () =>{
+
   const [message,setMessage] = useState('');
-  
-  const handleClick = async()=>{
-    const response = await fetch('/api/hello');
-    const data = await response.json();
-    setMessage(data.message);
+  const [name,setName] = useState('')
+
+  const handleSubmit = async(e)=>{
+    e.preventDefault();
+    const response = await fetch(`/api/hello?name=${name}`);
+    const data = res.text();
+    setMessage(data);
   }
   return(
     <div className='App'>
-      <button onClick={handleClick}>Click Me</button>
-      <h1>{message}</h1>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <input type="text" value={name} onChange={(e)=>setName(e.target.value)}/>
+          <button type="submit">Say Hello</button>
+        </form>
+        <p>{message}</p>
+      </div>
     </div>
   )
 }
