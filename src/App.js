@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-export default App = () =>{
+const App = () =>{
   const [message,setMessage] = useState('');
   
   const handleClick = async()=>{
@@ -11,7 +11,9 @@ export default App = () =>{
   return(
     <div className='App'>
       <button onClick={handleClick}>Click Me</button>
-      <h>{message}</h>
+      <h1>{message}</h1>
     </div>
   )
 }
+
+export default App;
