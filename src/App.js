@@ -1,27 +1,13 @@
-import React, {useState,useEffect} from 'react'
+import React from 'react'
+import LoginForm from './LoginForm'
 
-const App = () =>{
-
-  const [message,setMessage] = useState('');
-  const [name,setName] = useState('')
-
-  const handleSubmit = async(e)=>{
-    e.preventDefault();
-    const response = await fetch(`/api/hello?name=${name}`);
-    const data = res.text();
-    setMessage(data);
-  }
-  return(
+const App = () => {
+  return (
     <div className='App'>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <input type="text" value={name} onChange={(e)=>setName(e.target.value)}/>
-          <button type="submit">Say Hello</button>
-        </form>
-        <p>{message}</p>
-      </div>
+      <h1>Login Form</h1>
+      <LoginForm/>
     </div>
   )
 }
 
-export default App;
+export default App

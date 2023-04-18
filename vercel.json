@@ -1,0 +1,15 @@
+{
+  "routes":[
+    {
+      "src":"/",
+      "dest":"/api/login.js"
+    },{
+      "src":"/login",
+      "methods":[
+        "POST",
+        "GET"
+      ],
+      "dest":"api/login.js"
+    }
+  ]
+}
